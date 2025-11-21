@@ -1,5 +1,5 @@
 import mysql.connector
-conn = mysql.connector.connect(host="localhost",user="root",password="shiv009988",database="Hospital_Management")
+conn = mysql.connector.connect(host="localhost",user="root",password="Shiven@123",database="Hospital_Management")
 cursor = conn.cursor()
 print("**********Welcome to the Hospital Management System**********")
 
@@ -31,7 +31,7 @@ while True:
         rows = cursor.fetchall()
         print("\nAll Patients:")
         print("Name\t\t","Age\t\t","Gender\t\t","Disease\t\t","ID\t\t")
-        print("---------------------------------------------------------------------------------")
+        print("-"*81)
         for row in rows:
             for i in row:
                 print(i,end="\t\t")
@@ -43,7 +43,7 @@ while True:
         row = cursor.fetchone()
         if row:
             print("Name\t\t","Age\t\t","Gender\t\t","Disease\t\t","ID\t\t")
-            print("---------------------------------------------------------------------------------")
+            print("-"*81)
             print(row[0],"\t\t",row[1],"\t\t",row[2],"\t\t",row[3],"\t\t",row[4])
         else:
             print("Patient not found.")
@@ -54,7 +54,7 @@ while True:
         row = cursor.fetchone()
         if row:
             print("Name\t\t","Age\t\t","Gender\t\t","Disease\t\t","ID\t\t")
-            print("---------------------------------------------------------------------------------")
+            print("-"*81)
             print(row[0],"\t\t",row[1],"\t\t",row[2],"\t\t",row[3],"\t\t",row[4])
             name = input("Enter new name (press enter to skip): ") or row[1]
             age = input("Enter new age (press enter to skip): ") or row[2]
